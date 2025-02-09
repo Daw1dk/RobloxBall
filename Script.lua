@@ -2,6 +2,8 @@ local UserInputService = game:GetService("UserInputService")
 local RunService = game:GetService("RunService")
 local Camera = workspace.CurrentCamera
 
+-- made by _.dawidek. / daw1dk
+
 local SPEED_MULTIPLIER = 50
 local JUMP_POWER = 100
 local JUMP_GAP = 0.6
@@ -23,6 +25,8 @@ ball.Size = Vector3.new(5, 5, 5)
 ball.Material = Enum.Material.Fabric
 ball.BrickColor = BrickColor.new("Lime green")
 
+-- made by _.dawidek. / daw1dk
+
 ball.CustomPhysicalProperties = PhysicalProperties.new(
 	0.5,
 	1.5,  
@@ -37,6 +41,8 @@ params.FilterDescendantsInstances = {character}
 
 local spinningSpeed = 1
 local velocityTarget = Vector3.new(0, 0, 0)
+
+-- made by _.dawidek. / daw1dk
 
 local function isMoving()
 	return UserInputService:IsKeyDown(Enum.KeyCode.W) or 
@@ -89,6 +95,8 @@ UserInputService.JumpRequest:Connect(function()
 		ball.Velocity = ball.Velocity + Vector3.new(0, JUMP_POWER * math.random(1, 2), 0)
 	end
 end)
+
+-- made by _.dawidek. / daw1dk
 
 Camera.CameraSubject = ball
 humanoid.Died:Connect(function() tc:Disconnect() end)
